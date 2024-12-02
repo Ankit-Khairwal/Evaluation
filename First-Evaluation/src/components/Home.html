@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/income">Income</a></li>
+                <li><a href="/expenses">Expenses</a></li>
+                <li><a href="/transactions">Transactions</a></li>
+                <li><a href="/savings">Savings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Route -->
+        <section id="home" class="route">
+            <h1>Finance Manager Dashboard</h1>
+            <div class="financial-summary">
+                <h2>Financial Summary</h2>
+                <p>Total Income: $<span id="total-income">0</span></p>
+                <p>Total Expenses: $<span id="total-expenses">0</span></p>
+                <p>Current Savings: $<span id="current-savings">0</span></p>
+                <div>
+                    <label for="savings-goal">Savings Goal:</label>
+                    <input type="number" id="savings-goal" placeholder="Enter your goal">
+                </div>
+                <progress id="savings-progress" value="0" max="100"></progress>
+                <p id="progress-percentage">0%</p>
+            </div>
+        </section>
+
+        <!-- Income Route -->
+        <section id="income" class="route">
+            <h2>Income</h2>
+            <form id="income-form">
+                <label for="income-amount">Amount:</label>
+                <input type="number" id="income-amount" required>
+                <label for="income-description">Description:</label>
+                <input type="text" id="income-description" required>
+                <label for="income-date">Date:</label>
+                <input type="date" id="income-date" required>
+                <button type="submit">Add Income</button>
+            </form>
+            <ul id="income-list"></ul>
+        </section>
+
+        <!-- Expenses Route -->
+        <section id="expenses" class="route">
+            <h2>Expenses</h2>
+            <form id="expenses-form">
+                <label for="expense-amount">Amount:</label>
+                <input type="number" id="expense-amount" required>
+                <label for="expense-description">Description:</label>
+                <input type="text" id="expense-description" required>
+                <label for="expense-category">Category:</label>
+                <select id="expense-category" required>
+                    <option value="food">Food</option>
+                    <option value="travel">Travel</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="expense-date">Date:</label>
+                <input type="date" id="expense-date" required>
+                <button type="submit">Add Expense</button>
+            </form>
+            <ul id="expense-list"></ul>
+        </section>
+
+        <!-- Transactions Route -->
+        <section id="transactions" class="route">
+            <h2>Transactions</h2>
+            <ul id="transaction-list"></ul>
+        </section>
+
+        <!-- Savings Route -->
+        <section id="savings" class="route">
+            <h2>Savings</h2>
+            <p>Current Savings: $<span id="savings-current">0</span></p>
+            <div>
+                <label for="savings-goal-input">Set Savings Goal:</label>
+                <input type="number" id="savings-goal-input" required>
+            </div>
+            <progress id="savings-progress-bar" value="0" max="100"></progress>
+            <p id="savings-progress-percentage">0%</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Finance Manager. All Rights Reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
